@@ -60,7 +60,7 @@ div.top-home-content {
 
 /* Style the home content */
 div.home-content {
-  background-image: url("./imgs/RHCP-Home2.png");
+  background-image: url("https://cmst385-jrobinette2.azurewebsites.net/project3/imgs/RHCP-Home2.png");
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: cover;
