@@ -4,7 +4,7 @@ HTML REQUIREMENTS
 01: PROPER HTML5 PAGE STRUCTURE & SYNTAX: Your web pages must follow proper HTML5 page structure as listed by w3Schools.
 02: VALIDATION: Your web page AND CSS should validate WITHOUT ERRORS using the W3c HTML validator at http://validator.w3.org and W3c CSS validator at http://jigsaw.w3.org/css-validator/.
 03: NAMING CONVENTION: Save/Name your webpages appropriately and your External CSS file as style.css.
-04: IMAGES: Include at least Four (4) images. Images should be uploaded and linked from an images folder within the project4 folder on the Aloft Web server. Cite your source in your image captions. Optimize your images for the web so that their file sizes are 100k or lower and no greater than 600px. Wrap text around your images using CSS floats IF your design needs text wrap. Include padding so the text doesn't bump up against the edges of your images. Clear your floats. Hyperlinked images: Add a hyperlink to at least two of your images. That means that you can click on the image and something happens (you go to a larger version of the image, to a webpage, or to an e-mail link, etc.).
+04: IMAGES: Include at least Four (4) images. Images should be uploaded and linked from an images folder within the project4 folder on the Aloft Web server. Cite your source in your image captions. Optimize your images for the web so that their file sizes are 100k or lower and no greater than 600px. Wrap text around your images using CSS floats IF your design needs text wrap. Include padding so the text doesn't bump up against the edges of your images. Clear your floats. Hyperlinked images: Add a hyperlink to at least two of your images. That means that you can click on the image and something happens (you go to a larger version of the image, to a webpage, or to an e-mail link, etc.). Image1: Music Album Cover, Hyperlinked to Bandcamp| Image2, Image3, Image4,Image5, Image6, Image7: Blog, Hyperlinked to Larger Article Page | Image6: Background Image for Home Page, no cite/caption
 
 CSS REQUIREMENTS:
 a. H1 Heading Style (color, font family, center alignment, and font size). - Covered in Header Styling
@@ -18,13 +18,13 @@ h. Wrapper or Content Container (Create a Wrapper or Content Container that keep
 i. Navigation (Create a style to Center your navigation). Your navigation should include links to all four pages of your website. - Covered in Menu Styling
 
 FORMATTING REQUIREMENTS (HTML and CSS):
-01: FONT COLORS: Use at least two font colors that are visually appealing and easy to see and read (this can often be achieved with text color and link color, for example).
-02: ITALICS: Italicize at least one word to show emphasis.
-03: HORIZONTAL LINE: Include at least one Horizontal Line.
-04: LISTS: Include an Ordered and Unordered List.
-05: TABLE: Include at least one Table (invisible or visible). The Table must be used to display data and not to style any of the pages.
+01: FONT COLORS: Use at least two font colors that are visually appealing and easy to see and read (this can often be achieved with text color and link color, for example). - Included as part of background switching/color switching in CSS Files for Menu/Nav
+02: ITALICS: Italicize at least one word to show emphasis. - Album Name
+03: HORIZONTAL LINE: Include at least one Horizontal Line. - Included as part of the table CSS/Styles
+04: LISTS: Include an Ordered and Unordered List. - OL in the Music Page, -UL on About Me
+05: TABLE: Include at least one Table (invisible or visible). The Table must be used to display data and not to style any of the pages. - Included on the Music Page
 06: OVERALL LAYOUT: Your website must demonstrate an understanding of Layout and Design principles (Contrast, Proximity, Alignment, Repetition, Unity, etc).
-07: MAILTO LINK: Include at least one Mailto Link to your e-mail address.
+07: MAILTO LINK: Include at least one Mailto Link to your e-mail address. - Included on the Contact Page Form Action
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
  
 /* General Style*/
@@ -41,6 +41,20 @@ body {
 
 }
 
+a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #00d3bd;
+}
+
+figcaption {
+  background-color: black;
+  color: white;
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+  font-size: 10px;
+}
+
 /* Style the Header Content - Nav/Menu Bar and Header - Requirement G, Formatting Requirement 04*/
 /* Start Nav/Menu Bar and Header Page Style */
 .menu {
@@ -48,6 +62,10 @@ body {
     overflow: hidden;
     display: flex;
     justify-content: center;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	padding: 20px;
 	
 }
 
@@ -72,11 +90,11 @@ body {
 }
 
 .menu li a:hover {
-	background-color: grey;
+	background-color: #00d3bd;
 }
 /* Style the Header content - Requirement D*/
 #highlight-menu {
-	background-color: white; 
+	background-color: #00d3bd; 
 	color: black; /* Change the Color of the Menu Link to Black to Fit with White Background when selected and on page - Requirement Formating 01 - Two Font Colors*/
 }
 
@@ -86,22 +104,34 @@ div.header {
     overflow: hidden;
 }
 
-div.header h2{
-	text-align: center;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	color: white;
-}
-
 div.header h1{
 	text-align: center;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	color: white;
+	font-size: 26px;
+}
+
+div.header h2{
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: white;
+	font-size: 20px;
 }
 
 div.header p{
 	text-align: center;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	color: white;
+	font-size: 16px;
+	margin: 0;	
+}
+
+/* Default Style for the headers not in DIV */
+header {
+  background-color: black;
+  text-align: center;
+  font-size: 20px;
+  color: white;
 }
 
 /* End Nav/Menu Bar and Header Style */
@@ -109,19 +139,72 @@ div.header p{
 
 /* Style the Main/Home content */
 /* Start Main/Home content Style */
-div.home-content {
-	background-image: url("https://cmst385-jrobinette2.azurewebsites.net/project4/imgs/homebg.png");
-	background-repeat: no-repeat;
-	background-attachment: fixed;  
-	background-size: cover;
-	text-align: center;
-	width: 100%;
-	height: 1000px;
+/* DIV Style with Background Image for Home Page*/
+#div-home-content {
+  background-image: url("https://cmst385-jrobinette2.azurewebsites.net/project4/imgs/homebg.png");
+  height:600px;
+  width:auto;
+  padding: 25px;
+  background-position-x: center;
+  background-position-y: center; 
+  background-repeat: no-repeat;   
 }
+
+.othermain-content {
+  padding: 20px;
+  color: white;
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+}
+
+.othermain-col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.othermain-col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.othermainrow::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .othermain-col-25, .othermain-col-75 {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+/* Default Style Container for Main content not in DIV - Other Pages Primarily*/
+contentflex {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Default Style for Main content not in DIV - Other Pages Primarily*/
+contentmain {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: black;
+  padding: 10px;
+}
+
 /* End Main/Home content Style */
 
 
-/* Responsive Table for Music Page - Formatting Requirement 04, 05 */
+/* Responsive Table for Music Page and Article Page- Formatting Requirement 04, 05 */
 /* Start Music Page Style */
 table {
 	border-collapse: collapse;
@@ -129,12 +212,25 @@ table {
 	width: 60%;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
 	}
 
 th, td {
-	text-align: left;
+	text-align: center;
 	padding: 8px;
+	border: 1px solid white;
 }
+
+table hr{
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  border-color: #00d3bd;
+} 
 
 ul.table-list1 {
 	list-style-type: square;
@@ -142,6 +238,7 @@ ul.table-list1 {
 
 ol.table-list2 {
 	list-style-type: decimal;
+    font-size:12px;
 }
 
 img.responsive {
@@ -153,10 +250,114 @@ img.responsive {
 
 /* Style the Footer Content - Requirement G */
 /* Start Footer Style */
-.footer {
+footer {
 	background-color: black;
 	padding: 10px;
 	color: white;
 	text-align: center;
 }
 /* End Footer Style */
+
+
+/* Style the Blog Content */
+/* Start Blog Style */
+/* Float columns side by side */
+.blogcolumn {
+  float: left;
+  width: 25%;
+  padding: 10px 5px;
+}
+
+/* Clear floats after the columns */
+.blogrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .blogcolumn {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.blogcard {
+  box-shadow: 0 8px 8px -4px lightblue;
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  color: black;
+}
+/* End Blog Style */
+
+/* Style the Concact Form Content */
+/* Start Concat Form Style */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #00d3bd;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+  
+}
+
+.contact-container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  color: black;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.contact-col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.contact-col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.contactrow::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .contact-col-25, .contact-col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+/* End Contact Form Style */
