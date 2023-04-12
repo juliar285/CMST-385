@@ -62,8 +62,6 @@ figcaption {
     overflow: hidden;
     display: flex;
     justify-content: center;
-	-webkit-flex: 1;
-	-ms-flex: 1;
 	flex: 1;
 	padding: 20px;
 	
@@ -188,14 +186,11 @@ header {
 
 /* Default Style Container for Main content not in DIV - Other Pages Primarily*/
 contentflex {
-  display: -webkit-flex;
   display: flex;
 }
 
 /* Default Style for Main content not in DIV - Other Pages Primarily*/
 contentmain {
-  -webkit-flex: 3;
-  -ms-flex: 3;
   flex: 3;
   background-color: black;
   padding: 10px;
